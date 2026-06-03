@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "dragon_ascend",
+  "version": "${version}",
+  "name": "Dragon Ascend",
+  "description": "A Minecraft 1.21.1 Fabric mod inspired by Dragon Ball.",
+  "authors": ["bernardo"],
+  "contact": {},
+  "license": "All Rights Reserved",
+  "icon": "assets/dragon_ascend/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.bernardo.dragonascend.DragonAscend"],
+    "client": ["com.bernardo.dragonascend.client.DragonAscendClient"],
+    "fabric-language-kotlin:kotlin_adapter": ["net.fabricmc.language.kotlin.KotlinAdapter"]
+  },
+  "mixins": [
+    "dragon_ascend.mixins.json",
+    {
+      "config": "dragon_ascend.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.2",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*",
+    "fabric-language-kotlin": ">=1.12.3+kotlin.2.0.21"
+  }
+}
