@@ -11,6 +11,16 @@ repositories {
     maven("https://maven.fabricmc.net/")
 }
 
+loom {
+    splitEnvironmentSourceSets()
+    mods {
+        create("dragon_ascend") {
+            sourceSet(sourceSets["main"])
+            sourceSet(sourceSets["client"])
+        }
+    }
+}
+
 dependencies {
     minecraft("com.mojang:minecraft:${project.property("minecraft_version")}")
     mappings(loom.officialMojangMappings())
